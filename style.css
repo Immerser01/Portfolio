@@ -1,0 +1,409 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===== CSS Variables (Theme) ===== */
+:root {
+    --bg-color-light: #f4f7f6;
+    --text-color-light: #333;
+    --primary-color-light: #007bff;
+    --secondary-color-light: #6c757d;
+    --card-bg-light: #ffffff;
+    --border-color-light: #e0e0e0;
+    --bg-color-dark: #121212;
+    --text-color-dark: #e0e0e0;
+    --primary-color-dark: #00aaff;
+    --secondary-color-dark: #a0a0a0;
+    --card-bg-dark: #1e1e1e;
+    --border-color-dark: #333;
+    --bg-color: var(--bg-color-light);
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-color-light);
+    --secondary-color: var(--secondary-color-light);
+    --card-bg: var(--card-bg-light);
+    --border-color: var(--border-color-light);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode {
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --card-bg: var(--card-bg-dark);
+    --border-color: var(--border-color-dark);
+    --shadow: var(--shadow-dark);
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+p {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: var(--secondary-color);
+    }
+
+/* ===== Header / Navigation ===== */
+header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+    .nav-links li {
+        margin-left: 2rem;
+    }
+
+    .nav-links a {
+        font-weight: 600;
+        color: var(--text-color);
+    }
+
+.theme-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* ===== Buttons & Links ===== */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+body.dark-mode .btn-primary:hover {
+    background-color: #007bbd;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .btn-secondary:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+    .social-links a {
+        font-size: 2rem;
+        margin: 0 0.75rem;
+        color: var(--secondary-color);
+    }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    padding: 6rem 0;
+    background-color: var(--card-bg);
+}
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 2rem;
+    }
+
+    .hero .btn-primary {
+        margin-top: 2rem;
+    }
+
+/* ===== About Section ===== */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--border-color);
+}
+
+.about-content p {
+    flex: 1;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* ===== Projects Section ===== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem 0.5rem;
+}
+
+.project-card p {
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+}
+
+.project-links {
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+    .project-links .btn-secondary i {
+        margin-right: 0.5rem;
+    }
+
+.view-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ===== Skills Section ===== */
+.skills {
+    background-color: var(--card-bg);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+    .skill-list span {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: 25px;
+        border: 1px solid var(--border-color);
+    }
+
+/* ===== Competitive Programming Section ===== */
+.competitive p {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.cp-profiles {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cp-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    width: 250px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .cp-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .cp-card i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .cp-card.codeforces i {
+        color: #1F8ACB;
+    }
+
+    .cp-card.codechef i {
+        color: #6F4E37;
+    }
+
+body.dark-mode .cp-card.codechef i {
+    color: #A0765E;
+}
+
+
+.cp-card h4 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.cp-card span {
+    color: var(--secondary-color);
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+    footer .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer .social-links {
+        margin-top: 0;
+    }
+
+        footer .social-links a {
+            font-size: 1.5rem;
+        }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simple responsive nav. Can be replaced with a hamburger menu */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
