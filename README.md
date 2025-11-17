@@ -1,1 +1,1 @@
-			This is for using github pages.
+This is for using github pages.
